@@ -1,0 +1,111 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>魔法の部屋</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  　<script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a-scene background="color: #ECECEC">
+        
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="10" color="#7BC8A4" shadow></a-plane>
+
+        <a-sky color="#87CEEB"></a-sky>
+
+        <a-box 
+            position="-1 0.5 -3" 
+            rotation="0 45 0" 
+            color="#4CC3D9" 
+            shadow
+            random-color-on-click>
+        </a-box>
+        
+        <a-sphere 
+            position="0 1.25 -5" 
+            radius="1.25" 
+            color="#EF2D5E" 
+            shadow
+            random-color-on-click>
+        </a-sphere>
+        
+        <a-cylinder 
+            position="1 0.75 -3" 
+            radius="0.5" 
+            height="1.5" 
+            color="#FFC65D" 
+            shadow
+            random-color-on-click>
+        </a-cylinder>
+
+        <a-entity id="player" 
+          position="0 0 2" 
+          movement-controls="fly: false; speed: 0.15">
+          <a-entity camera 
+              position="0 1.6 0" 
+              look-controls="pointerLockEnabled: true">
+        <a-cursor></a-cursor>
+    </a-entity>
+    
+</a-entity>
+
+    </a-scene>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>3Dportfolio-gyarrary</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
+    
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a-scene background="color: #ECECEC">
+        
+        <a-plane position="0 0 0" rotation="-90 0 0" width="10" height="10" color="#f0f0f0"></a-plane>
+        <a-plane position="0 2.5 -5" rotation="0 0 0" width="10" height="5" color="#f0f0f0"></a-plane>
+        <a-plane position="-5 2.5 0" rotation="0 90 0" width="10" height="5" color="#f0f0f0"></a-plane>
+        <a-plane position="5 2.5 0" rotation="0 -90 0" width="10" height="5" color="#f0f0f0"></a-plane>
+        <a-plane position="0 2.5 5" rotation="0 180 0" width="10" height="5" color="#f0f0f0"></a-plane>
+        
+        <a-light type="ambient" color="#CCC"></a-light>
+        <a-light type="spot" angle="45" color="#FFF" position="-2 4 3"></a-light>
+
+        <a-sky color="#333"></a-sky>
+
+        <a-image id="work1-image" src="IMG_9048.jpg" position="-3 2 -4.8" width="2" height="1.5" show-info-on-click="target: #work1-text"></a-image>
+        <a-image id="work2-image" src="スクリーンショット 2025-08-10 004518.png" position="0 2 -4.8" width="2" height="1.5" show-info-on-click="target: #work2-text"></a-image>
+        <a-image id="work3-image" src="スクリーンショット 2025-08-24 192831.png" position="3 2 -4.8" width="2" height="1.5" show-info-on-click="target: #work3-texr"></a-image>
+        <a-text 
+            id="work1-text" 
+            value="This is my first artwork!"
+            position="-3 1 -4.8" 
+            color="black"
+            width="4"
+            visible="false">
+        </a-text>
+
+        <a-entity id="player" 
+                  position="0 0 2" 
+                  movement-controls="fly: false; speed: 0.15">
+            
+            <a-entity camera 
+                      position="0 1.6 0" 
+                      look-controls="pointerLockEnabled: true">
+                <a-cursor></a-cursor>
+            </a-entity>
+            
+        </a-entity>
+
+    </a-scene>
+</body>
+</html>
