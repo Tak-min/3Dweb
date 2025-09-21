@@ -5,7 +5,8 @@
     <title>3Dポートフォリオギャラリー</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aframe-physics-system@4.0.1/dist/aframe-physics-system.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@c-frame/aframe-physics-system@4.2.2/dist/aframe-physics-system.min.js"></script>
     
     <script src="main.js"></script>
     <link rel="stylesheet" href="style.css">
@@ -21,19 +22,10 @@
         <a-plane static-body position="0 2.5 10" rotation="0 180 0" width="20" height="5" color="#d0d0d0"></a-plane>
         
         <a-light type="ambient" color="#444"></a-light>
-        <a-light type="spot" 
-                 position="0 4.8 0" 
-                 rotation="-90 0 0" 
-                 angle="60" 
-                 intensity="0.5" 
-                 penumbra="0.5">
-        </a-light>
-        <a-light type="spot" color="#FFF" intensity="0.6" angle="25" penumbra="0.4"
-                 position="-3 3.5 -8.5" target="#work1-image"></a-light>
-        <a-light type="spot" color="#FFF" intensity="0.6" angle="25" penumbra="0.4"
-                 position="0 3.5 -8.5" target="#work2-image"></a-light>
-        <a-light type="spot" color="#FFF" intensity="0.6" angle="25" penumbra="0.4"
-                 position="3 3.5 -8.5" target="#work3-image"></a-light>
+        <a-light type="spot" position="0 4.8 0" rotation="-90 0 0" angle="60" intensity="0.5" penumbra="0.5"></a-light>
+        <a-light type="spot" color="#FFF" intensity="0.6" angle="25" penumbra="0.4" position="-3 3.5 -8.5" target="#work1-image"></a-light>
+        <a-light type="spot" color="#FFF" intensity="0.6" angle="25" penumbra="0.4" position="0 3.5 -8.5" target="#work2-image"></a-light>
+        <a-light type="spot" color="#FFF" intensity="0.6" angle="25" penumbra="0.4" position="3 3.5 -8.5" target="#work3-image"></a-light>
 
         <a-sky color="#333"></a-sky>
 
@@ -45,16 +37,12 @@
         <a-text id="work2-text" value="This is my portfolio website." position="0 1 -9.8" color="black" width="4" visible="false"></a-text>
         <a-text id="work3-text" value="This is a game I made." position="3 1 -9.8" color="black" width="4" visible="false"></a-text>
 
-        <a-entity id="player" 
-                  position="0 0.8 2" 
-                  kinematic-body="shape: box; halfExtents: 0.5 0.8 0.5;"
-                  wasd-controls="fly: false; acceleration: 40;"
-                  touch-controls="enabled: true;">
-            <a-entity camera 
-                      position="0 0.8 0" 
-                      look-controls="pointerLockEnabled: true">
-                <a-cursor></a-cursor>
-            </a-entity>
+        <a-entity id="player"
+                  position="0 1.6 2"
+                  camera
+                  universal-controls
+                  kinematic-body>
+            <a-cursor></a-cursor>
         </a-entity>
 
     </a-scene>
