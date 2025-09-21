@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <a-scene physics="gravity: 0" background="color: #ECECEC">
+    <a-scene physics="debug: true" background="color: #ECECEC">
         
         <a-plane static-body position="0 0 0" rotation="-90 0 0" width="20" height="20" color="#f0f0f0"></a-plane>
         <a-plane static-body position="0 5 0" rotation="90 0 0" width="20" height="20" color="#f0f0f0"></a-plane>
@@ -28,7 +28,6 @@
                  intensity="0.5" 
                  penumbra="0.5">
         </a-light>
-
         <a-light type="spot" color="#FFF" intensity="0.6" angle="25" penumbra="0.4"
                  position="-3 3.5 -8.5" target="#work1-image"></a-light>
         <a-light type="spot" color="#FFF" intensity="0.6" angle="25" penumbra="0.4"
@@ -47,12 +46,12 @@
         <a-text id="work3-text" value="This is a game I made." position="3 1 -9.8" color="black" width="4" visible="false"></a-text>
 
         <a-entity id="player" 
-                  position="0 0.2 2" 
-                  kinematic-body
+                  position="0 0.8 2" 
+                  kinematic-body="shape: box; halfExtents: 0.5 0.8 0.5;"
                   wasd-controls="fly: false; acceleration: 40;"
                   touch-controls="enabled: true;">
             <a-entity camera 
-                      position="0 1.6 0" 
+                      position="0 0.8 0" 
                       look-controls="pointerLockEnabled: true">
                 <a-cursor></a-cursor>
             </a-entity>
