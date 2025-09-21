@@ -5,7 +5,6 @@
     <title>3Dポートフォリオギャラリー</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.2.0/dist/aframe-extras.min.js"></script>
-    
     <script src="https://cdn.jsdelivr.net/npm/@c-frame/aframe-physics-system@4.2.2/dist/aframe-physics-system.min.js"></script>
     
     <script src="main.js"></script>
@@ -38,11 +37,15 @@
         <a-text id="work3-text" value="This is a game I made." position="3 1 -9.8" color="black" width="4" visible="false"></a-text>
 
         <a-entity id="player"
-                  position="0 1.6 2"
-                  camera
-                  universal-controls
-                  kinematic-body>
-            <a-cursor></a-cursor>
+                  position="0 0 2"
+                  kinematic-body
+                  universal-controls>
+
+            <a-entity camera
+                      position="0 1.6 0"
+                      look-controls="pointerLockEnabled: true">
+                <a-cursor></a-cursor>
+            </a-entity>
         </a-entity>
 
     </a-scene>
