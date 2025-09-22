@@ -30,11 +30,7 @@
         <a-box static-body position="0 2.5 10.25" rotation="0 180 0" depth="0.5" height="5" width="20" color="#d0d0d0"></a-box>
 
         <a-entity position="-4 2 -9.8">
-            <a-image id="work1-image" src="#img-nfc" width="2" height="1.5" show-info-on-click="target: #work1-info">
-                <a-entity animation="property: scale; to: 1.1 1.1 1.1; startEvents: mouseenter; dur: 200; easing: easeOutCubic"
-                          animation__reverse="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200; easing: easeOutCubic">
-                </a-entity>
-            </a-image>
+            <a-image id="work1-image" src="#img-nfc" width="2" height="1.5" show-info-on-click="target: #work1-info"></a-image>
             <a-entity id="work1-info" position="0 -1.2 0.1" visible="false">
                 <a-plane color="#222" opacity="0.8" width="2.2" height="0.8"></a-plane>
                 <a-text value="NFC Card to WebPage System. Write a URL to the card, tap it with a smartphone, and it will automatically open the web page."
@@ -44,11 +40,7 @@
         </a-entity>
 
         <a-entity position="0 2 -9.8">
-            <a-image id="work2-image" src="#img-portfolio" width="2" height="1.5" show-info-on-click="target: #work2-info">
-                <a-entity animation="property: scale; to: 1.1 1.1 1.1; startEvents: mouseenter; dur: 200; easing: easeOutCubic"
-                          animation__reverse="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200; easing: easeOutCubic">
-                </a-entity>
-            </a-image>
+            <a-image id="work2-image" src="#img-portfolio" width="2" height="1.5" show-info-on-click="target: #work2-info"></a-image>
             <a-entity id="work2-info" position="0 -1.2 0.1" visible="false">
                 <a-plane color="#222" opacity="0.8" width="2.2" height="0.8"></a-plane>
                 <a-text value="A personal portfolio website. It introduces my skills and past projects. Built with modern web technologies."
@@ -58,11 +50,7 @@
         </a-entity>
 
         <a-entity position="4 2 -9.8">
-            <a-image id="work3-image" src="#img-game" width="2" height="1.5" show-info-on-click="target: #work3-info">
-                <a-entity animation="property: scale; to: 1.1 1.1 1.1; startEvents: mouseenter; dur: 200; easing: easeOutCubic"
-                          animation__reverse="property: scale; to: 1 1 1; startEvents: mouseleave; dur: 200; easing: easeOutCubic">
-                </a-entity>
-            </a-image>
+            <a-image id="work3-image" src="#img-game" width="2" height="1.5" show-info-on-click="target: #work3-info"></a-image>
             <a-entity id="work3-info" position="0 -1.2 0.1" visible="false">
                 <a-plane color="#222" opacity="0.8" width="2.2" height="0.8"></a-plane>
                 <a-text value="A 2D stealth action game. The goal is to reach the destination without being detected by enemies."
@@ -74,10 +62,18 @@
         <a-entity id="player"
                   position="0 1.6 8"
                   kinematic-body
-                  camera
-                  look-controls="pointerLockEnabled: true"
-                  player-controls="speed: 3.0">
-            <a-cursor color="#FFF"></a-cursor>
+                  movement-controls="speed: 0.15; fly: false">
+            <a-entity camera
+                      position="0 0 0"
+                      look-controls="pointerLockEnabled: true">
+                <a-cursor 
+                    raycaster="objects: [show-info-on-click]"
+                    animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+                    animation__fusing="property: scale; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+                    event-set__mouseenter="_event: mouseenter; color: springgreen"
+                    event-set__mouseleave="_event: mouseleave; color: white">
+                </a-cursor>
+            </a-entity>
         </a-entity>
     </a-scene>
 </body>
