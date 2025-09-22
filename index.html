@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <a-scene physics="debug: true" background-color="#ECECEC">
+    <a-scene physics="driver: local" background-color="#ECECEC">
         <a-assets>
             <img id="img-nfc" src="IMG_9048.jpg">
             <img id="img-portfolio" src="スクリーンショット 2025-08-10 004518.png">
@@ -60,15 +60,18 @@
         </a-entity>
 
         <a-entity id="player"
-                  position="0 0 8" kinematic-body
-                  movement-controls="speed: 0.15; fly: false;">
-            
-            <a-cylinder position="0 0.9 0" radius="0.4" height="1.8" material="visible: false"></a-cylinder>
-
+                  position="0 1.6 8"
+                  kinematic-body
+                  movement-controls="speed: 0.15; fly: false">
             <a-entity camera
-                      position="0 1.6 0" look-controls="pointerLockEnabled: true">
+                      position="0 0 0"
+                      look-controls="pointerLockEnabled: true">
                 <a-cursor 
-                    raycaster="objects: a-image">
+                    raycaster="objects: [show-info-on-click]"
+                    animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+                    animation__fusing="property: scale; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+                    event-set__mouseenter="_event: mouseenter; color: springgreen"
+                    event-set__mouseleave="_event: mouseleave; color: white">
                 </a-cursor>
             </a-entity>
         </a-entity>
