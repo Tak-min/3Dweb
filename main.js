@@ -194,3 +194,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   scene.appendChild(bulge);
 });
+
+// シンプルなリンクオープン用コンポーネント
+AFRAME.registerComponent('link-on-click', {
+  schema: {
+    url: { type: 'string' }
+  },
+  init: function () {
+    const url = this.data.url;
+    if (!url) {
+      console.warn('link-on-click: URLが指定されていません。');
+      return;
+    }
+    // クリック（VRではコントローラのクリックやカーソルクリック）で新しいタブを開く
+    this.el.addEventListener('click', () => {
+      try {
+        window.open(url, '_blank');
+      } catch (e) {
+        console.error('リンクを開けませんでした:', e);
+      }
+    });
+  }
+});
