@@ -15,6 +15,7 @@
         <a-assets>
             <img id="img-profile" src="myakmyak.jpg">
             <img id="wall-texture" src="texture.jpg">
+            <a-asset-item id="my-model" src="my3Dmodel.glb"></a-asset-item>
         </a-assets>
 
         <a-light type="ambient" color="#aaa"></a-light>
@@ -133,6 +134,10 @@
                 <a-text value="Instagram" position="0 0 0" color="#88aaff" align="center" width="2" link-on-click="url: https://www.instagram.com/takminium"></a-text>
                 <a-text value="Email" position="0.5 0 0" color="#88aaff" align="center" width="2" link-on-click="url: mailto:taku810616@gmail.com"></a-text>
             </a-entity>
+            <!-- 3D model placed in the Thank you area -->
+            <a-entity id="my-3dmodel" position="1.3 -2.6 0" rotation="-6 -18 -3" scale="1.4 1.4 1.4" gltf-model="#my-model" shadow="cast: true; receive: true"></a-entity>
+            <!-- extra point light to illuminate the model -->
+            <a-light type="point" color="#ffffff" intensity="1.2" distance="6" position="0 2 2"></a-light>
             <a-light type="spot" color="#FFF" intensity="2.0" angle="40" penumbra="0.3" position="0 0 4"></a-light>
 </a-entity>
 
@@ -213,12 +218,12 @@
         <a-text value="Docker, Git, Unity, Blender, etc." position="0 -0.2 0" color="#CCC" align="center" width="2" wrap-count="40"></a-text>
     </a-entity>
 
-    <a-entity id="skill-others" position="0 1.8 -4.5" rotation="0 0 0">
+    <a-entity id="skill-others" position="0 0.1 -4.5" rotation="-90 0 30">
         <a-plane material="color: #111; side: double" width="2s" height="0.9" position="0 0 0"></a-plane>
         <a-text value="skill" position="0 -0 0" color="#CCC" align="center" width="10" wrap-count="20"></a-text>
     </a-entity>
     
-    <a-entity id="skill-others" position="0 1.8 -13.8" rotation="0 0 0">
+    <a-entity id="skill-others" position="0 1.8 -13.99" rotation="0 0 0">
         <a-plane material="color: #111; side: double" width="2.5s" height="0.9" position="0 0 0"></a-plane>
         <a-text value="works" position="0 -0 0" color="#CCC" align="center" width="10" wrap-count="20"></a-text>
     </a-entity>
