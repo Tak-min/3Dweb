@@ -67,57 +67,19 @@
             <a-light type="spot" color="#FFF" intensity="1.2" angle="30" penumbra="0.4" position="0 0.2 4.7" target="a-image"></a-light>
         </a-entity>
         
-        <!-- Skills: distribute across both walls before the bulge -->
-        <a-entity id="skills">
-            <a-entity id="skill-web" position="-4.2 2.5 2" rotation="0 90 0">
-                <a-text value="Web Development" position="0 1 0" color="white" align="center" width="4"></a-text>
-                <a-plane material="color: #111; side: double" width="2.5" height="1.2" position="0 0 0"></a-plane>
-                <a-text value="Building modern websites and apps with HTML, CSS, and JavaScript!" position="0 -0.2 0" color="#CCC" align="center" width="2" wrap-count="40"></a-text>
-                <a-light type="spot" color="#FFF" intensity="1.4" angle="25" penumbra="0.6" position="1.2 0.5 0"></a-light>
-            </a-entity>
 
-            <a-entity id="skill-python" position="4.2 2.5 0.5" rotation="0 -90 0">
-                <a-text value="Python" position="0 1 0" color="white" align="center" width="4"></a-text>
-                <a-plane material="color: #111; side: double" width="2.5" height="1.2" position="0 0 0"></a-plane>
-                <a-text value="Experience with automation, web scraping, and AI development!" position="0 -0.2 0" color="#CCC" align="center" width="2" wrap-count="40"></a-text>
-                <a-light type="spot" color="#FFF" intensity="1.4" angle="25" penumbra="0.6" position="-1.2 0.5 0"></a-light>
-            </a-entity>
+        <!-- Move rear items closer to the front -->
+<a-entity position="0 2.5 -20">
+    <a-text value="Experience & Events" position="0 1 0" color="white" align="center" width="8"></a-text>
+    <a-text value="- Hackathon XYZ (2024)\n- Robotics Meetup (2023)\n- Open Source Contributor" position="0 0 0" color="#CCC" align="center" width="6" wrap-count="40"></a-text>
+</a-entity>
 
-            <a-entity id="skill-embedded" position="-4.2 2.5 -4" rotation="0 90 0">
-                <a-text value="Embedded Systems" position="0 1 0" color="white" align="center" width="4"></a-text>
-                <a-plane material="color: #111; side: double" width="2.5" height="1.2" position="0 0 0"></a-plane>
-                <a-text value="Working with microcontrollers and circuits, creating various projects with soldering!" position="0 -0.2 0" color="#CCC" align="center" width="2" wrap-count="40"></a-text>
-                <a-light type="spot" color="#FFF" intensity="1.4" angle="25" penumbra="0.6" position="1.2 0.5 0"></a-light>
-            </a-entity>
-        </a-entity>
-
-        <!-- Works: place inside bulge hugging inner wall -->
-        <a-entity id="bulge-works">
-            <a-image id="work1-image" src="#img-nfc" width="2.5" height="1.875" position="3.2 1 -10" look-at="0 1.6 -10" show-info-on-click="target: #work1-info"></a-image>
-            <a-entity id="work1-info" position="3.2 -0.4 -10" visible="false">
-                <a-plane color="#000" opacity="0.9" width="2.7" height="0.8"></a-plane>
-                <a-text value="NFC Card to WebPage System" position="0 0 0.01" color="white" align="center" width="2.5" wrap-count="40"></a-text>
-            </a-entity>
-
-            <a-image id="work2-image" src="#img-game" width="2.5" height="1.875" position="-3.2 1 -10" look-at="0 1.6 -10" show-info-on-click="target: #work2-info"></a-image>
-            <a-entity id="work2-info" position="-3.2 -0.4 -10" visible="false">
-                <a-plane color="#000" opacity="0.9" width="2.7" height="0.8"></a-plane>
-                <a-text value="2D Stealth Action Game" position="0 0 0.01" color="white" align="center" width="2.5" wrap-count="40"></a-text>
-            </a-entity>
-        </a-entity>
-
-        <!-- Career / Events section placed after bulge and before final contact -->
-        <a-entity position="0 2.5 -62">
-            <a-text value="Experience & Events" position="0 1 0" color="white" align="center" width="8"></a-text>
-            <a-text value="- Hackathon XYZ (2024)\n- Robotics Meetup (2023)\n- Open Source Contributor" position="0 0 0" color="#CCC" align="center" width="6" wrap-count="40"></a-text>
-        </a-entity>
-
-        <a-entity position="0 2.5 -70">
-            <a-text value="Thank you for visiting." position="0 1 0" color="white" align="center" width="8"></a-text>
-            <a-text value="Feel free to contact me." position="0 0 0" color="white" align="center" width="6"></a-text>
-            <a-text value="[GitHub] [Twitter] [Email]" position="0 -1 0" color="#88aaff" align="center" width="6"></a-text>
-            <a-light type="spot" color="#FFF" intensity="2.0" angle="40" penumbra="0.3" position="0 0 4"></a-light>
-        </a-entity>
+<a-entity position="0 2.5 -28">
+    <a-text value="Thank you for visiting." position="0 1 0" color="white" align="center" width="8"></a-text>
+    <a-text value="Feel free to contact me." position="0 0 0" color="white" align="center" width="6"></a-text>
+    <a-text value="[GitHub] [Twitter] [Email]" position="0 -1 0" color="#88aaff" align="center" width="6"></a-text>
+    <a-light type="spot" color="#FFF" intensity="2.0" angle="40" penumbra="0.3" position="0 0 4"></a-light>
+</a-entity>
 
         <a-entity id="player"
                   position="0 0 8"
@@ -127,7 +89,7 @@
             <a-entity camera
                       position="0 1.6 0"
                       look-controls="pointerLockEnabled: true">
-                <a-cursor raycaster="objects: a-image"></a-cursor>
+                <a-cursor raycaster="objects: a-sphere"></a-cursor>
             </a-entity>
         </a-entity>
 
@@ -145,48 +107,58 @@
             material="src: #wall-texture; repeat: 1 3; roughness: 1; metalness: 0">
         </a-box>
 
-        <!-- Add six skill boards -->
-<a-entity id="skill-boards" position="0 0 -40">
+        <!-- Move skill boards to the front zone -->
+<a-entity id="skill-boards" position="0 0 5">
     <!-- Language Skills -->
-    <a-entity id="skill-language" position="-4.2 2.5 0" rotation="0 90 0">
+    <a-entity id="skill-language" position="-4.2 1.8 -2" rotation="0 90 0">
         <a-text value="Languages" position="0 1 0" color="white" align="center" width="4"></a-text>
-        <a-plane material="color: #111; side: double" width="2.5" height="1.2" position="0 0 0"></a-plane>
+        <a-plane material="color: #111; side: double" width="2" height="1.2" position="0 0 0"></a-plane>
         <a-text value="C#, C++, HTML, CSS, JS, Python, .NET" position="0 -0.2 0" color="#CCC" align="center" width="2" wrap-count="40"></a-text>
     </a-entity>
 
     <!-- Frameworks -->
-    <a-entity id="skill-frameworks" position="4.2 2.5 0" rotation="0 -90 0">
+    <a-entity id="skill-frameworks" position="4.2 1.8 -2" rotation="0 -90 0">
         <a-text value="Frameworks" position="0 1 0" color="white" align="center" width="4"></a-text>
-        <a-plane material="color: #111; side: double" width="2.5" height="1.2" position="0 0 0"></a-plane>
-        <a-text value="Flutter, Dart, Three.js, TypeScript, Django, etc." position="0 -0.2 0" color="#CCC" align="center" width="2" wrap-count="40"></a-text>
+        <a-plane material="color: #111; side: double" width="2" height="1.2" position="0 0 0"></a-plane>
+        <a-text value="Vue, React, Flutter, Dart, Three.js, TypeScript, Django, etc." position="0 -0.2 0" color="#CCC" align="center" width="2" wrap-count="40"></a-text>
     </a-entity>
 
     <!-- Editors -->
-    <a-entity id="skill-editors" position="-4.2 2.5 -4" rotation="0 90 0">
+    <a-entity id="skill-editors" position="-4.2 1.8 -4.5" rotation="0 90 0">
         <a-text value="Editors" position="0 1 0" color="white" align="center" width="4"></a-text>
-        <a-plane material="color: #111; side: double" width="2.5" height="1.2" position="0 0 0"></a-plane>
+        <a-plane material="color: #111; side: double" width="2" height="1.2" position="0 0 0"></a-plane>
         <a-text value="VSCode, Eclipse, IntelliJ, Bash, etc." position="0 -0.2 0" color="#CCC" align="center" width="2" wrap-count="40"></a-text>
     </a-entity>
 
     <!-- Web Development -->
-    <a-entity id="skill-webdev" position="4.2 2.5 -4" rotation="0 -90 0">
+    <a-entity id="skill-webdev" position="4.2 1.8 -4.5" rotation="0 -90 0">
         <a-text value="Web Development" position="0 1 0" color="white" align="center" width="4"></a-text>
-        <a-plane material="color: #111; side: double" width="2.5" height="1.2" position="0 0 0"></a-plane>
+        <a-plane material="color: #111; side: double" width="2" height="1.2" position="0 0 0"></a-plane>
         <a-text value="CodePen, Nginx, Postgres, Supabase, etc." position="0 -0.2 0" color="#CCC" align="center" width="2" wrap-count="40"></a-text>
     </a-entity>
 
     <!-- Circuits -->
-    <a-entity id="skill-circuits" position="-4.2 2.5 -8" rotation="0 90 0">
+    <a-entity id="skill-circuits" position="-4.2 1.8 -7" rotation="0 90 0">
         <a-text value="Circuits" position="0 1 0" color="white" align="center" width="4"></a-text>
-        <a-plane material="color: #111; side: double" width="2.5" height="1.2" position="0 0 0"></a-plane>
+        <a-plane material="color: #111; side: double" width="2" height="1.2" position="0 0 0"></a-plane>
         <a-text value="Raspberry Pi, Arduino, ROS, etc." position="0 -0.2 0" color="#CCC" align="center" width="2" wrap-count="40"></a-text>
     </a-entity>
 
     <!-- Others -->
-    <a-entity id="skill-others" position="4.2 2.5 -8" rotation="0 -90 0">
+    <a-entity id="skill-others" position="4.2 1.8 -7" rotation="0 -90 0">
         <a-text value="Others" position="0 1 0" color="white" align="center" width="4"></a-text>
-        <a-plane material="color: #111; side: double" width="2.5" height="1.2" position="0 0 0"></a-plane>
+        <a-plane material="color: #111; side: double" width="2s" height="1.2" position="0 0 0"></a-plane>
         <a-text value="Docker, Git, Unity, Blender, etc." position="0 -0.2 0" color="#CCC" align="center" width="2" wrap-count="40"></a-text>
+    </a-entity>
+
+    <a-entity id="skill-others" position="0 1.8 -4.5" rotation="0 0 0">
+        <a-plane material="color: #111; side: double" width="2s" height="0.9" position="0 0 0"></a-plane>
+        <a-text value="skill" position="0 -0 0" color="#CCC" align="center" width="10" wrap-count="20"></a-text>
+    </a-entity>
+    
+    <a-entity id="skill-others" position="0 1.8 -13.8" rotation="0 0 0">
+        <a-plane material="color: #111; side: double" width="2.5s" height="0.9" position="0 0 0"></a-plane>
+        <a-text value="works" position="0 -0 0" color="#CCC" align="center" width="10" wrap-count="20"></a-text>
     </a-entity>
 </a-entity>
 
@@ -199,6 +171,118 @@
     <a-light type="spot" color="#FFF" intensity="1.5" angle="30" penumbra="0.5" position="-4.2 1.5 -8"></a-light>
     <a-light type="spot" color="#FFF" intensity="1.5" angle="30" penumbra="0.5" position="4.2 1.5 -8"></a-light>
 </a-entity>
-    </a-scene>
+
+<!-- Add display stands for all projects -->
+<a-entity id="project-displays" position="0 0 -10">
+    <!-- Project 1: YouTube Speed Controller -->
+    <a-entity position="8 0 0.6" rotation="0 270 0">
+        <a-box position="0 0.4 0" width="0.5" height="0.8" depth="0.5" color="white"></a-box>
+        <a-sphere position="0 1.2 0" radius="0.2" color="yellow" event-set__click="_target: https://github.com/Tak-min/youtube-speed-controller.git"></a-sphere>
+        <a-image src="speedController.png" position="0 3 0" width="3" height="2.5" look-at="0 1.6 -10"></a-image>
+        <a-entity position="0 0.8 0.5" visible="true">
+            <a-plane color="#000" opacity="0.9" width="2" height="1"></a-plane>
+            <a-text value="YouTube Speed Controller\nChrome extension to adjust video speed." position="0 0 0.01" color="white" align="center" width="1.8" wrap-count="40"></a-text>
+        </a-entity>
+    </a-entity>
+
+    <!-- Project 2: Discord VoiceVOX Chatbot -->
+    <a-entity position="7.00 0 3.89" rotation="0 250 0">
+        <a-box position="0 0.4 0" width="0.5" height="0.8" depth="0.5" color="white"></a-box>
+        <a-sphere position="0 1.2 0" radius="0.2" color="yellow" event-set__click="_target: https://github.com/Tak-min/AI_ChatBot.git"></a-sphere>
+        <a-image src="discordWife.png" position="0 3 0" width="3" height="2.5" look-at="0 1.6 -10"></a-image>
+        <a-entity position="0 0.8 0.5" visible="true">
+            <a-plane color="#000" opacity="0.9" width="2" height="1"></a-plane>
+            <a-text value="Discord VoiceVOX Chatbot\nVoiceVOX bot for natural conversations." position="0 0 0.01" color="white" align="center" width="1.8" wrap-count="40"></a-text>
+        </a-entity>
+    </a-entity>
+
+    <!-- Project 4: Self-Introduction Website -->
+    <a-entity position="-7.7 0 0.5" rotation="0 88 0">
+        <a-box position="0 0.4 0" width="0.5" height="0.8" depth="0.5" color="white"></a-box>
+        <a-sphere position="0 1.2 0" radius="0.2" color="yellow" event-set__click="_target: https://github.com/Tak-min/selfIntroduce_webPages.git"></a-sphere>
+        <a-image src="Firstintroduce.png" position="0 3 0" width="3" height="2.5" look-at="0 1.6 -10"></a-image>
+        <a-entity position="0 0.8 0.5" visible="true">
+            <a-plane color="#000" opacity="0.9" width="2" height="1"></a-plane>
+            <a-text value="Self-Introduction Website\nMinimal design for simplicity." position="0 0 0.01" color="white" align="center" width="1.8" wrap-count="40"></a-text>
+        </a-entity>
+    </a-entity>
+
+    <!-- Project 5: Memory Architect -->
+    <a-entity position="-5.23 0 5.9" rotation="0 130.91 0">
+        <a-box position="0 0.4 0" width="0.5" height="0.8" depth="0.5" color="white"></a-box>
+        <a-sphere position="0 1.2 0" radius="0.2" color="yellow" event-set__click="_target: https://github.com/Tak-min/Memory-Architect.git"></a-sphere>
+        <a-image src="memoryArchitect.png" position="0 3 0" width="3" height="2.5" look-at="0 1.6 -10"></a-image>
+        <a-entity position="0 0.8 0.5" visible="true">
+            <a-plane color="#000" opacity="0.9" width="2" height="1"></a-plane>
+            <a-text value="Memory Architect\nCity management game based on memories." position="0 0 0.01" color="white" align="center" width="1.8" wrap-count="40"></a-text>
+        </a-entity>
+    </a-entity>
+
+    <!-- Project 6: Orpheus in Minecraft -->
+    <a-entity position="-7.0 0 3.5" rotation="0 115">
+        <a-box position="0 0.4 0" width="0.5" height="0.8" depth="0.5" color="white"></a-box>
+        <a-sphere position="0 1.2 0" radius="0.2" color="yellow" event-set__click="_target: https://github.com/Tak-min/orpheusInMineCraft.git"></a-sphere>
+        <a-image src="orpheus.png" position="0 3 0" width="3" height="2.5" look-at="0 1.6 -10"></a-image>
+        <a-entity position="0 0.8 0.5" visible="true">
+            <a-plane color="#000" opacity="0.9" width="2" height="1"></a-plane>
+            <a-text value="Orpheus in Minecraft\nMod featuring Orpheus mascot." position="0 0 0.01" color="white" align="center" width="1.8" wrap-count="40"></a-text>
+        </a-entity>
+    </a-entity>
+
+    <!-- Project 7: 3D AI Companion -->
+    <a-entity position="-7.2 0 -2.6" rotation="0 68 0">
+        <a-box position="0 0.4 0" width="0.5" height="0.8" depth="0.5" color="white"></a-box>
+        <a-sphere position="0 1.2 0" radius="0.2" color="yellow" event-set__click="_target: https://github.com/Tak-min/CharaTalk.git"></a-sphere>
+        <a-image src="AIWife2.png" position="0 3 0" width="3" height="2.5" look-at="0 1.6 -10"></a-image>
+        <a-entity position="0 0.8 0.5" visible="true">
+            <a-plane color="#000" opacity="0.9" width="2" height="1"></a-plane>
+            <a-text value="3D AI Companion\nEmotion-based 3D character interaction." position="0 0 0.01" color="white" align="center" width="1.8" wrap-count="40"></a-text>
+        </a-entity>
+    </a-entity>
+
+    <!-- Project 8: Stardust Ruins -->
+    <a-entity position="-5.7 0 -5.4" rotation="0 44 0">
+        <a-box position="0 0.4 0" width="0.5" height="0.8" depth="0.5" color="white"></a-box>
+        <a-sphere position="0 1.2 0" radius="0.2" color="yellow" event-set__click="_target: https://github.com/Tak-min/StardustRuins-and-the-CelestialGarden-.git"></a-sphere>
+        <a-image src="stardust.png" position="0 3 0" width="3" height="2.5" look-at="0 1.6 -10"></a-image>
+        <a-entity position="0 0.8 0.5" visible="true">
+            <a-plane color="#000" opacity="0.9" width="2" height="1"></a-plane>
+            <a-text value="Stardust Ruins\n3D exploration game with serene worlds." position="0 0 0.01" color="white" align="center" width="1.8" wrap-count="40"></a-text>
+        </a-entity>
+    </a-entity>
+
+    <!-- Project 9: The Lonely Guide -->
+    <a-entity position="5.8 0 -5.6" rotation="0 309 0">
+        <a-box position="0 0.4 0" width="0.5" height="0.8" depth="0.5" color="white"></a-box>
+        <a-sphere position="0 1.2 0" radius="0.2" color="yellow" event-set__click="_target: https://github.com/Tak-min/TheLonelyGuide-to-the-WorldsEnd.git"></a-sphere>
+        <a-image src="lonely.png" position="0 3 0" width="3" height="2.5" look-at="0 1.6 -10"></a-image>
+        <a-entity position="0 0.8 0.5" visible="true">
+            <a-plane color="#000" opacity="0.9" width="2" height="1"></a-plane>
+            <a-text value="The Lonely Guide\nGentle adventure to find peace." position="0 0 0.01" color="white" align="center" width="1.8" wrap-count="40"></a-text>
+        </a-entity>
+    </a-entity>
+
+    <!-- Project 10: AI Wife Test -->
+    <a-entity position="7.50 0 -2.53" rotation="0 289.55 0">
+        <a-box position="0 0.4 0" width="0.5" height="0.8" depth="0.5" color="white"></a-box>
+        <a-sphere position="0 1.2 0" radius="0.2" color="yellow" event-set__click="_target: https://github.com/Tak-min/AIWife-test.git"></a-sphere>
+        <a-image src="AIWife3.png" position="0 3 0" width="3" height="2.5" look-at="0 1.6 -10"></a-image>
+        <a-entity position="0 0.8 0.5" visible="true">
+            <a-plane color="#000" opacity="0.9" width="2" height="1"></a-plane>
+            <a-text value="AI Wife Test\nInteractive 3D character via text chat." position="0 0 0.01" color="white" align="center" width="1.8" wrap-count="40"></a-text>
+        </a-entity>
+    </a-entity>
+
+    <!-- Project 11: Soralog -->
+    <a-entity position="5.24 0 5.98" rotation="0 220 0">
+        <a-box position="0 0.4 0" width="0.5" height="0.8" depth="0.5" color="white"></a-box>
+        <a-sphere position="0 1.2 0" radius="0.2" color="yellow" event-set__click="_target: https://github.com/Tak-min/NovaTech-OpenHackU2025-KANAZAWA.git"></a-sphere>
+        <a-image src="soralog.png" position="0 3 0" width="3" height="2.5" look-at="0 1.6 -10"></a-image>
+        <a-entity position="0 0.8 0.5" visible="true">
+            <a-plane color="#000" opacity="0.9" width="2" height="1"></a-plane>
+            <a-text value="Soralog\nApp to predict weather-based jinxes." position="0 0 0.01" color="white" align="center" width="1.8" wrap-count="40"></a-text>
+        </a-entity>
+    </a-entity>
+</a-entity>
 </body>
 </html>
